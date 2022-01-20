@@ -26,6 +26,8 @@ public class scriptjogador : MonoBehaviour
 	public Transform CriarProjetil;
 	int qtdmorte;
 	int vidaatual;
+	public AudioClip somtiro;
+	private AudioSource audioS;
 	// Use this for initialization
 	private void Awake()
 	{
@@ -36,6 +38,7 @@ public class scriptjogador : MonoBehaviour
 		rb2d = this.GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
 		duplo = PlayerPrefs.GetInt("duplo");
+		audioS = gameObject.GetComponent<AudioSource>();
 	}
 
 	void FixedUpdate()
@@ -72,6 +75,8 @@ public class scriptjogador : MonoBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
+			audioS.clip = somtiro;
+			audioS.Play();
 			
 			if (PlayerPrefs.GetInt("arma") == 0)
 			if (ladoDireito)
