@@ -27,7 +27,9 @@ public class scriptjogador : MonoBehaviour
 	int qtdmorte;
 	int vidaatual;
 	public AudioClip somtiro;
+	public AudioClip somvida;
 	private AudioSource audioS;
+	int vidasom;
 	// Use this for initialization
 	private void Awake()
 	{
@@ -39,6 +41,7 @@ public class scriptjogador : MonoBehaviour
 		animator = GetComponent<Animator>();
 		duplo = PlayerPrefs.GetInt("duplo");
 		audioS = gameObject.GetComponent<AudioSource>();
+		vidasom = PlayerPrefs.GetInt("vida");
 	}
 
 	void FixedUpdate()
@@ -59,6 +62,12 @@ public class scriptjogador : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if(vidasom != PlayerPrefs.GetInt("vida"))
+        {
+			audioS.clip = somvida;
+			audioS.Play();
+			vidasom = PlayerPrefs.GetInt("vida");
+        }
 		qtdmorte = PlayerPrefs.GetInt("morte");
 		vidaatual = PlayerPrefs.GetInt("vida");
 		if (Input.GetKeyDown(KeyCode.UpArrow) && solo == true)

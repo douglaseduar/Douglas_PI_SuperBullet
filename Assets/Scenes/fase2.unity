@@ -3760,6 +3760,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d0d4582e07c54cc45bf5d05057818f2d, type: 3}
     - target: {fileID: 4651833155328863071, guid: 3aab5c69d7060b84998315d9ea87b7de,
         type: 3}
+      propertyPath: somvida
+      value: 
+      objectReference: {fileID: 8300000, guid: e487be3c6754ba0438e6d29cf32ce6f0, type: 3}
+    - target: {fileID: 4651833155328863071, guid: 3aab5c69d7060b84998315d9ea87b7de,
+        type: 3}
       propertyPath: CriarProjetil
       value: 
       objectReference: {fileID: 1994575852}
