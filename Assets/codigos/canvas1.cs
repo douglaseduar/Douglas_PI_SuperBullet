@@ -24,7 +24,7 @@ public class canvas1 : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("vida", 100);
-        saudacao.text = "Seja bem vindo, " + nomeaux + " ! Sabemos que o caminho é difícil mas dejamos boa sorte...";
+        saudacao.text = "Seja bem vindo, " + nomeaux + "! Sabemos que o caminho é difícil mas dejamos boa sorte...";
         Destroy(saudacao, 5f);
     }
 

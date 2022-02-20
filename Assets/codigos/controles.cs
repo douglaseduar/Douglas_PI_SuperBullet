@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class controles : MonoBehaviour
 {
+    string hora;
+    string minuto;
+    string segundo;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +18,13 @@ public class controles : MonoBehaviour
         PlayerPrefs.SetInt("trofeu", 0);
         PlayerPrefs.SetInt("morte", 0);
         PlayerPrefs.SetInt("total", 0);
+        hora = System.DateTime.Now.ToString("HH");
+        minuto = System.DateTime.Now.ToString("mm");
+        segundo = System.DateTime.Now.ToString("ss");
+        PlayerPrefs.SetInt("hora", System.Convert.ToInt32(hora));
+        PlayerPrefs.SetInt("minuto", System.Convert.ToInt32(minuto));
+        PlayerPrefs.SetInt("segundo", System.Convert.ToInt32(segundo));
+
 
         StartCoroutine("teste");
     }
